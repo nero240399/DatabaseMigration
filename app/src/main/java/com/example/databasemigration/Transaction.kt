@@ -29,6 +29,19 @@ import androidx.room.PrimaryKey
  * isDeploy INTEGER, isCall INTEGER,
  * functionCall TEXT, data TEXT,
  * totalBalance TEXT
+ *
+ * 3.0: id INTEGER PRIMARY KEY AUTOINCREMENT,
+ * hash TEXT, address TEXT,
+ * toAddress TEXT, pubKey TEXT,
+ * amount TEXT, pendingUse TEXT,
+ * balance TEXT, fee TEXT,
+ * tip TEXT, message TEXT,
+ * time INTEGER, status INTEGER,
+ * type TEXT, prevHash TEXT,
+ * sign TEXT, receive_info TEXT,
+ * isDeploy INTEGER, isCall INTEGER,
+ * functionCall TEXT, data TEXT,
+ * totalBalance TEXT
  */
 @Entity
 data class Transaction(
