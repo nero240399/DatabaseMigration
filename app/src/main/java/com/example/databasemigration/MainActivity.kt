@@ -2,9 +2,7 @@ package com.example.databasemigration
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
-import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +13,7 @@ class MainActivity : ComponentActivity() {
             "app_database.db"
         ).build()
 
-        (1..3000).forEach {
+        /*(1..3000).forEach {
             lifecycleScope.launch {
                 db.walletDao.insertWallet(
                     Wallet(
@@ -50,6 +48,6 @@ class MainActivity : ComponentActivity() {
                     )
                 )
             }
-        }
+        }*/
     }
 }

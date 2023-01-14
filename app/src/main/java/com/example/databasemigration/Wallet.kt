@@ -4,14 +4,18 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
- * 1.0: Bảng wallet gồm có các cột: id INTEGER PRIMARY KEY AUTOINCREMENT,
+ * 1.0: id INTEGER PRIMARY KEY AUTOINCREMENT,
  * address TEXT, balance INTEGER,
  * pendingBalance INTEGER
+ *
+ * 2.0: id INTEGER PRIMARY KEY AUTOINCREMENT,
+ * address TEXT, name TEXT, balance TEXT,
+ * pendingBalance TEXT
  */
 @Entity
 data class Wallet(
     val address: String,
-    val balance: Int,
-    val pendingBalance: Int,
+    val balance: String,
+    val pendingBalance: String,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 )
