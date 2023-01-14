@@ -13,11 +13,24 @@ class MainActivity : ComponentActivity() {
             applicationContext,
             AppDatabase::class.java,
             "app_database.db"
-        ).build()
+        ).addMigrations(AppDatabase.migration3To4).build()
 
         lifecycleScope.launch {
             db.walletDao.getWallets().forEach(::println)
             db.transactionDao.getTransactions().forEach(::println)
+            db.nodeDao.getNodes().forEach(::println)
         }
+
+/*        lifecycleScope.launch {
+            (1..3000).forEach {
+                db.nodeDao.insertNode(
+                    Node(
+                        ip = "192 $it",
+                        port = it,
+                        time = it
+                    )
+                )
+            }
+        }*/
     }
 }
