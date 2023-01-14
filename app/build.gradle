@@ -20,11 +20,12 @@ android {
             useSupportLibrary true
         }
     }
-
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
     }
-
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -70,4 +71,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
     ksp "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    androidTestImplementation "com.google.truth:truth:1.1.3"
 }
